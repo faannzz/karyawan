@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Data Karyawan</title>
+<link rel="stylesheet" href="assets/css/style.css?v=4">
+</head>
+<body>
+<div class="topbar">
+  <h1>Dashboard Karyawan</h1>
+  <span class="tag">fann</span>
+</div>
+<div class="container">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="karyawan">Karyawan</button>
+    <button class="tab-btn" data-tab="jabatan">Jabatan</button>
+    <button class="tab-btn" data-tab="departemen">Departemen</button>
+  </div>
+  <div class="tab-panel active" id="tab-karyawan">
+    <div class="panel-header">
+      <h2>Data Karyawan</h2>
+      <button class="btn btn-primary" id="btn-tambah-karyawan">+ Tambah Karyawan</button>
+    </div>
+    <div class="karyawan-grid" id="grid-karyawan"></div>
+  </div>
+  <div class="tab-panel" id="tab-jabatan">
+    <div class="panel-header">
+      <h2>Data Jabatan</h2>
+      <button class="btn btn-primary" id="btn-tambah-jabatan">+ Tambah Jabatan</button>
+    </div>
+    <div class="simple-grid" id="grid-jabatan"></div>
+  </div>
+  <div class="tab-panel" id="tab-departemen">
+    <div class="panel-header">
+      <h2>Data Departemen</h2>
+      <button class="btn btn-primary" id="btn-tambah-departemen">+ Tambah Departemen</button>
+    </div>
+    <div class="simple-grid" id="grid-departemen"></div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-karyawan">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-karyawan-title">Tambah Karyawan</h3>
+      <button class="modal-close" data-close="modal-karyawan">×</button>
+    </div>
+    <form id="form-karyawan">
+      <div class="modal-body">
+        <input type="hidden" name="id">
+        <div class="field">
+          <label>Nama</label>
+          <input type="text" name="nama" required>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email">
+        </div>
+        <div class="field">
+          <label>Telepon</label>
+          <input type="text" name="telepon">
+        </div>
+        <div class="field">
+          <label>Alamat</label>
+          <textarea name="alamat"></textarea>
+        </div>
+        <div class="field">
+          <label>Jabatan</label>
+          <select name="jabatan_id" data-enhance data-label="Pilih Jabatan"><option value="">-- Pilih --</option></select>
+        </div>
+        <div class="field">
+          <label>Departemen</label>
+          <select name="departemen_id" data-enhance data-label="Pilih Departemen"><option value="">-- Pilih --</option></select>
+        </div>
+        <div class="field">
+          <label>Tanggal Masuk</label>
+          <input type="hidden" name="tanggal_masuk" data-datepicker data-label="Pilih Tanggal Masuk">
+        </div>
+        <div class="field">
+          <label>Status</label>
+          <select name="status" data-enhance data-label="Pilih Status">
+            <option value="Aktif">Aktif</option>
+            <option value="Nonaktif">Nonaktif</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-close="modal-karyawan">Batal</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-jabatan">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-jabatan-title">Tambah Jabatan</h3>
+      <button class="modal-close" data-close="modal-jabatan">×</button>
+    </div>
+    <form id="form-jabatan">
+      <div class="modal-body">
+        <input type="hidden" id="jabatan-id">
+        <div class="field">
+          <label>Nama Jabatan</label>
+          <input type="text" id="jabatan-nama" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-close="modal-jabatan">Batal</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-departemen">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-departemen-title">Tambah Departemen</h3>
+      <button class="modal-close" data-close="modal-departemen">×</button>
+    </div>
+    <form id="form-departemen">
+      <div class="modal-body">
+        <input type="hidden" id="departemen-id">
+        <div class="field">
+          <label>Nama Departemen</label>
+          <input type="text" id="departemen-nama" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-close="modal-departemen">Batal</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="assets/js/utils.js?v=4"></script>
+<script src="assets/js/select.js?v=4"></script>
+<script src="assets/js/datepicker.js?v=4"></script>
+<script src="assets/js/confirm.js?v=4"></script>
+<script src="assets/js/departemen.js?v=4"></script>
+<script src="assets/js/jabatan.js?v=4"></script>
+<script src="assets/js/karyawan.js?v=4"></script>
+<script src="assets/js/main.js?v=4"></script>
+</body>
+</html>
